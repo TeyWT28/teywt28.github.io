@@ -1065,10 +1065,13 @@ section {
 }
 
 .contact .info i {
-  /* font-size: 32px;
+  font-size: 32px;
   color: #d43076;
   line-height: 0;
-  margin-right: 15px; */
+  margin-right: 15px;
+}
+
+.contact .info a {
   font-size: 18px;
   display: inline-block;
   background: #fff;
