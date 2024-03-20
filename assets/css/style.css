@@ -812,14 +812,14 @@ section {
   font-weight: 600;
 }
 
+.portfolio .portfolio-wrap .portfolio-info h4:hover {
+  color: #e684ae;
+}
+
 .portfolio .portfolio-wrap .portfolio-info p {
   color: #ffffff;
   font-size: 14px;
   text-transform: uppercase;
-}
-
-.portfolio .portfolio-wrap .portfolio-info h4:hover {
-  color: #e684ae;
 }
 
 .portfolio .portfolio-wrap .portfolio-links {
@@ -1096,7 +1096,7 @@ section {
 .contact .info p {
   font-size: 16px;
   margin: 0;
-  align-items: center;
+  align-items: bottom;
 }
 
 .contact .php-email-form .error-message {
