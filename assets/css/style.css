@@ -822,7 +822,7 @@ section {
   opacity: 0;
   left: 0;
   right: 0;
-  bottom: 7%;
+  bottom: 5%;
   text-align: center;
   z-index: 3;
   position: absolute;
@@ -1062,6 +1062,7 @@ section {
 
 .contact .info {
   color: #5a656e;
+  align-items: center;
 }
 
 .contact .info i {
