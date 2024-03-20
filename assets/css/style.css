@@ -1067,14 +1067,14 @@ section {
 .contact .info {
   color: #5a656e;
   align-items: center;
+  display: inline-block;
 }
 
 .contact .info i {
   font-size: 22px;
   color: #d43076;
   /* line-height: 10; */
-  margin-right: 15px;
-  align-items: center;
+  float:left;
 }
 
 /* .contact .info a {
