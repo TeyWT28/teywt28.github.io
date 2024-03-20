@@ -1067,7 +1067,7 @@ section {
 .contact .info {
   color: #5a656e;
   align-items: center;
-  display: inline-block;
+  /* display: inline-block; */
 }
 
 .contact .info i {
