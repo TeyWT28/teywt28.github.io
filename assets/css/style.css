@@ -818,6 +818,10 @@ section {
   text-transform: uppercase;
 }
 
+.portfolio .portfolio-wrap .portfolio-info a:hover {
+  color: #e684ae;
+}
+
 .portfolio .portfolio-wrap .portfolio-links {
   opacity: 0;
   left: 0;
@@ -1066,10 +1070,11 @@ section {
 }
 
 .contact .info i {
-  font-size: 18px;
+  font-size: 25px;
   color: #d43076;
-  line-height: 0;
+  line-height: 10;
   margin-right: 15px;
+  align-items: center;
 }
 
 /* .contact .info a {
@@ -1089,7 +1094,7 @@ section {
 } */
 
 .contact .info p {
-  font-size: 14px;
+  font-size: 18px;
   margin: 0;
   align-items: center;
 }
