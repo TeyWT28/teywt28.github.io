@@ -1065,12 +1065,12 @@ section {
   align-items: center;
 }
 
-.contact .info i {
+/* .contact .info i {
   font-size: 32px;
   color: #d43076;
   line-height: 0;
   margin-right: 15px;
-}
+} */
 
 .contact .info a {
   font-size: 18px;
