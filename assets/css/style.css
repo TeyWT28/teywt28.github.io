@@ -822,10 +822,10 @@ section {
   opacity: 0;
   left: 0;
   right: 0;
-  bottom: 10%;
+  /* bottom: 10%; */
   text-align: center;
   z-index: 3;
-  position: absolute;
+  /* position: absolute; */
   transition: all ease-in-out 0.3s;
 }
 
