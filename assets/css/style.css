@@ -1065,14 +1065,14 @@ section {
   align-items: center;
 }
 
-/* .contact .info i {
-  font-size: 32px;
+.contact .info i {
+  font-size: 18px;
   color: #d43076;
   line-height: 0;
   margin-right: 15px;
-} */
+}
 
-.contact .info a {
+/* .contact .info a {
   font-size: 18px;
   display: inline-block;
   background: #fff;
@@ -1086,7 +1086,7 @@ section {
   height: 36px;
   transition: 0.3s;
   border: 1px solid #d43076;
-}
+} */
 
 .contact .info p {
   font-size: 14px;
