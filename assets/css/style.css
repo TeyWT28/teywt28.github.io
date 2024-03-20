@@ -822,7 +822,7 @@ section {
   opacity: 0;
   left: 0;
   right: 0;
-  bottom: 5%;
+  bottom: 7%;
   text-align: center;
   z-index: 3;
   position: absolute;
@@ -856,7 +856,7 @@ section {
 
 .portfolio .portfolio-wrap:hover .portfolio-links {
   opacity: 1;
-  bottom: calc(20% - 10px);
+  bottom: calc(50% - 50px);
 }
 
 /*--------------------------------------------------------------
@@ -1065,10 +1065,23 @@ section {
 }
 
 .contact .info i {
-  font-size: 32px;
+  /* font-size: 32px;
   color: #d43076;
   line-height: 0;
-  margin-right: 15px;
+  margin-right: 15px; */
+  font-size: 18px;
+  display: inline-block;
+  background: #fff;
+  color: #d43076;
+  line-height: 0;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+  border: 1px solid #d43076;
 }
 
 .contact .info p {
