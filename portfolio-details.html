@@ -34,23 +34,6 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 
-  <!-- Get portfolio-->
-  <script>
-    function getParams() {
-      var idx = document.URL.indexOf('?');
-      var params = new Array();
-      if (idx != -1) {
-        var pairs = document.URL.substring(idx+1, document.URL.length).split('&');
-        for (var i=0; i<pairs.length; i++) {
-          nameVal = pairs[i].split('=');
-          params[nameVal[0]] = nameVal[1];
-        }
-      }
-      return params;
-    }
-    params = getParams();
-  </script>
-
 </head>
 
 <body>
@@ -58,7 +41,6 @@
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
-
       <div class="logo">
         <!-- <h1><a href="index.html">Lonely</a></h1> -->
         <!-- Uncomment below if you prefer to use an image logo -->
@@ -70,10 +52,17 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="index.html#about">About</a></li>
           <li><a href="index.html#skills">Skills</a></li>
-          <li><a href="index.html#resume">Resume</a></li>
-          <li><a href="index.html#portfolio">Portfolio</a></li>
-          <li><a href="index.html#testimonials">Achievements</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="#resume">Resume</a></li>
+          <li class="dropdown"><a href="index.html#portfolio"><span>Portfolio</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="portfolio-details.html?portfolio=cicada">Cicada Species Recognition Based on Acoustic Signals</a></li>
+              <li><a href="portfolio-details.html?portfolio=hand">Hand Gesture Recognition</a></li>
+              <li><a href="portfolio-details.html?portfolio=chatbot">Chatbot</a></li>
+              <li><a href="portfolio-details.html?portfolio=shiftplan">Shift Plan Enhancement</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="index.html#testimonials">Achievements</a></li>
+          <li><a class="nav-link scrollto" href="index.html#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -84,17 +73,21 @@
   <main id="main">
 
     <!-- ======= Breadcrumbs Section ======= -->
-    <section class="breadcrumbs">
-      <div class="container">
-
+    <section id='breadcrumb-hero' class="breadcrumbs" style="background: url('assets/img/portfolio/test-hero.png') center right; background-size: cover;">
+      <div class="container">      
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Portfolio Details</h2>
+          <!-- <h2 id="title">Portfolio Details</h2> -->
           <ol>
             <li><a href="index.html">Home</a></li>
             <li><a href="index.html#portfolio">Portfolio</a></li>
-            <li id="detail-breadcrumb">Portfolio Details</li>
+            <li>Portfolio Details</li>
           </ol>
         </div>
+
+        <!-- Hero -->
+        <section class="d-flex flex-column align-items-center justify-content-center">
+          <h1 id="title">Portfolio Details</h1>
+        </section><!-- End Hero -->
 
       </div>
     </section><!-- Breadcrumbs Section -->
@@ -130,15 +123,15 @@
             <div class="portfolio-info">
               <h3>Project information</h3>
               <ul>
-                <li><strong>Category</strong>: Web design</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+                <li id="category"><strong>Category</strong>Artificial Intelligence</li>
+                <li id="language"><strong>Programming Language</strong>Python</li>
+                <li id="date"><strong>Project date</strong>: 01 March, 2020</li>
+                <li id="link"><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
               </ul>
             </div>
             <div class="portfolio-description">
-              <h2>This is an example of portfolio detail</h2>
-              <p>
+              <h2>Description</h2>
+              <p id="description">
                 Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
               </p>
             </div>
@@ -169,16 +162,6 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Set portfolio details for selected portfolio-->
-  <script>
-    var para1=document.getElementById('detail-breadcrumb');
-    // var para2=document.getElementById('element2');
-    
-    para1.value = unescape(params["var1"]);
-    // para2.value = unescape(params["var2"]);
-    
-  </script>
-
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -191,6 +174,53 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+
+   <!-- Get portfolio & update body-->
+   <script>
+    
+    // function getParams() {
+      var portfolio = document.URL.split('=')[1];
+      var p_name, p_hero, p_lang, p_category, p_date, p_link, p_desc;
+
+      switch (portfolio) {
+        case "cicada": 
+          p_name      = 'Cicada Species Recognition Based on Acoustic Signals'; 
+          p_category  = 'Artificial Intelligence, Image Recognition, Machine Learning';
+          p_lang      = 'Python, MATLAB';
+          p_date      = 'Jun 2021 - Apr 2022';
+          p_desc      = 'This is a project to classify cicada species based on their acoustic signals.'
+          break;
+        case "hand": 
+          p_name      = 'Hand Gesture Recognition';
+          p_category  = 'Artificial Intelligence, Computer Vision, Machine Learning';
+          p_lang      = 'Python';
+          p_date      = '2022';
+          break;
+        case "chatbot": 
+          p_name      = 'Chatbot'; 
+          p_category  = 'Artificial Intelligence, Natural Language Processing';
+          p_lang      = 'Python';
+          p_date      = '2022';
+          break;
+      }
+
+      // Set title
+      document.getElementById("title").innerHTML = p_name;
+
+      // Set background
+      p_hero = document.getElementById("breadcrumb-hero").style.background;
+      document.getElementById("breadcrumb-hero").style.background= p_hero.replace("test", portfolio);
+
+      // Set project info
+      document.getElementById("category").innerHTML = '<strong>Category</strong>: ' +p_category;
+      document.getElementById("language").innerHTML = '<strong>Programming Language</strong>: ' +p_lang;
+      document.getElementById("date").innerHTML = '<strong>Project Date</strong>: ' +p_date;
+
+      // Set project description
+      document.getElementById("description").innerHTML = p_desc;
+
+    
+  </script>
 </body>
 
 </html>
