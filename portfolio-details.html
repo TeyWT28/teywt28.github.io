@@ -59,6 +59,7 @@
               <li><a href="portfolio-details.html?portfolio=hand">Hand Gesture Recognition</a></li>
               <li><a href="portfolio-details.html?portfolio=chatbot">Chatbot</a></li>
               <li><a href="portfolio-details.html?portfolio=shiftplan">Shift Plan Enhancement</a></li>
+              <li><a href="portfolio-details.html?portfolio=facemask">Medical Face Mask Selfie Facial Recognition</a></li>
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="index.html#testimonials">Achievements</a></li>
@@ -73,24 +74,22 @@
   <main id="main">
 
     <!-- ======= Breadcrumbs Section ======= -->
-    <section id='breadcrumb-hero' class="breadcrumbs" style="background: url('assets/img/portfolio/test-hero.png') center right; background-size: cover;">
+    <!-- <section class="breadcrumbs">
       <div class="container">      
         <div class="d-flex justify-content-between align-items-center">
-          <!-- <h2 id="title">Portfolio Details</h2> -->
           <ol>
             <li><a href="index.html">Home</a></li>
             <li><a href="index.html#portfolio">Portfolio</a></li>
-            <li>Portfolio Details</li>
+            <li id="breadcrumb-details">Portfolio Details</li>
           </ol>
         </div>
-
-        <!-- Hero -->
-        <section class="d-flex flex-column align-items-center justify-content-center">
-          <h1 id="title">Portfolio Details</h1>
-        </section><!-- End Hero -->
-
       </div>
-    </section><!-- Breadcrumbs Section -->
+    </section>Breadcrumbs Section -->
+
+    <!-- Hero -->
+    <section id='portfolio-hero'class="d-flex flex-column align-items-center justify-content-center" style="background: url('assets/img/portfolio/test-hero.png') center right; background-size: cover;">
+      <h1 id="title">Portfolio Details</h1>
+    </section><!-- End Hero -->
 
     <!-- ======= Portfolio Details Section ======= -->
     <section id="portfolio-details" class="portfolio-details">
@@ -99,7 +98,18 @@
         <div class="row gy-4">
 
           <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper">
+            <div class="row portfolio-container">
+              
+              <div class="col-lg-4 col-md-6 portfolio-item"><img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid"></div>
+              <div class="col-lg-4 col-md-6 portfolio-item"><img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid"></div>
+              
+              <div class="col-lg-4 col-md-6 portfolio-item"><img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid"></div>
+              <div class="col-lg-4 col-md-6 portfolio-item"><img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid"></div>
+              <div class="col-lg-4 col-md-6 portfolio-item"><img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid"></div>
+              
+            </div>
+            
+            <!-- <div class="portfolio-details-slider swiper">
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
@@ -115,8 +125,11 @@
                 </div>
 
               </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
               <div class="swiper-pagination"></div>
-            </div>
+              
+            </div> -->
           </div>
 
           <div class="col-lg-4">
@@ -202,14 +215,28 @@
           p_lang      = 'Python';
           p_date      = '2022';
           break;
+        case "shiftplan": 
+          p_name      = 'Shift Plan Enhancement'; 
+          p_category  = 'Automation';
+          p_lang      = 'Excel VBA';
+          p_date      = 'Mar 2021 - Jun 2021';
+          break;
+        case "facemask": 
+          p_name      = 'Medical Face Mask Selfie Facial Recognition'; 
+          p_category  = 'Artificial Intelligence, Computer Vision, Machine Learning';
+          p_lang      = 'Python';
+          p_date      = '2022';
+
+          document.getElementById("title").style.color= "#d4d4d4";
+          break;
       }
 
       // Set title
       document.getElementById("title").innerHTML = p_name;
 
       // Set background
-      p_hero = document.getElementById("breadcrumb-hero").style.background;
-      document.getElementById("breadcrumb-hero").style.background= p_hero.replace("test", portfolio);
+      p_hero = document.getElementById("portfolio-hero").style.background;
+      document.getElementById("portfolio-hero").style.background= p_hero.replace("test", portfolio);
 
       // Set project info
       document.getElementById("category").innerHTML = '<strong>Category</strong>: ' +p_category;
@@ -222,5 +249,4 @@
     
   </script>
 </body>
-
 </html>
