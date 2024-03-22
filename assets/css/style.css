@@ -870,6 +870,20 @@ section {
   bottom: calc(30% - 50px);
 }
 
+#img-hover{
+  position:absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: all ease-in-out 0.5s;
+}
+
+.portfolio .portfolio-wrap:hover  #img-hover{
+  opacity: 1;
+}
+
 /*--------------------------------------------------------------
 # Portfolio Details
 --------------------------------------------------------------*/
