@@ -52,18 +52,22 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="index.html#about">About</a></li>
           <li><a href="index.html#skills">Skills</a></li>
-          <li><a class="nav-link scrollto" href="#resume">Resume</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
           <li class="dropdown"><a href="index.html#portfolio"><span>Portfolio</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="portfolio-details.html?portfolio=cicada">Cicada Species Recognition Based on Acoustic Signals</a></li>
-              <li><a href="portfolio-details.html?portfolio=hand">Hand Gesture Recognition</a></li>
+              <li><a href="portfolio-details.html?portfolio=errortable">Error Table Handling Project</a></li>
               <li><a href="portfolio-details.html?portfolio=chatbot">Chatbot</a></li>
               <li><a href="portfolio-details.html?portfolio=shiftplan">Shift Plan Enhancement</a></li>
               <li><a href="portfolio-details.html?portfolio=facemask">Medical Face Mask Selfie Facial Recognition</a></li>
+              <li><a href="portfolio-details.html?portfolio=hand">Hand Gesture Recognition</a></li>
+              <li><a href="portfolio-details.html?portfolio=octa">OCTA Learning Portal</a></li>
+              <li><a href="portfolio-details.html?portfolio=store">Convenience Store Recognition System</a></li>
+              <li><a href="portfolio-details.html?portfolio=codescape">CodeScape</a></li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="index.html#testimonials">Achievements</a></li>
-          <li><a class="nav-link scrollto" href="index.html#contact">Contact</a></li>
+          <li><a href="index.html#testimonials">Achievements</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -96,18 +100,24 @@
       <div class="container">
 
         <div class="row gy-4">
-
+            
           <div class="col-lg-8">
-            <div class="row portfolio-container">
-              
-              <div class="col-lg-4 col-md-6 portfolio-item"><img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid"></div>
-              <div class="col-lg-4 col-md-6 portfolio-item"><img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid"></div>
-              
-              <div class="col-lg-4 col-md-6 portfolio-item"><img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid"></div>
-              <div class="col-lg-4 col-md-6 portfolio-item"><img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid"></div>
-              <div class="col-lg-4 col-md-6 portfolio-item"><img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid"></div>
-              
+            <div class="portfolio-description">
+              <h2>Description</h2>
+              <p id="description">
+                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+              </p>
             </div>
+            <!-- <div class="row portfolio-container">
+              
+              <div class="col-lg-4 col-md-6 portfolio-item"><img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid"></div>
+              <div class="col-lg-4 col-md-6 portfolio-item"><img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid"></div>
+              
+              <div class="col-lg-4 col-md-6 portfolio-item"><img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid"></div>
+              <div class="col-lg-4 col-md-6 portfolio-item"><img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid"></div>
+              <div class="col-lg-4 col-md-6 portfolio-item"><img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid"></div>
+              
+            </div> -->
             
             <!-- <div class="portfolio-details-slider swiper">
               <div class="swiper-wrapper align-items-center">
@@ -140,14 +150,10 @@
                 <li id="language"><strong>Programming Language</strong>Python</li>
                 <li id="date"><strong>Project date</strong>: 01 March, 2020</li>
                 <li id="link"><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-              </ul>
+                <li id="github"><strong>GitHub URL</strong>: <a href="#">www.example.com</a></li>
+               </ul>
             </div>
-            <div class="portfolio-description">
-              <h2>Description</h2>
-              <p id="description">
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-              </p>
-            </div>
+            
           </div>
 
         </div>
@@ -193,7 +199,7 @@
     
     // function getParams() {
       var portfolio = document.URL.split('=')[1];
-      var p_name, p_hero, p_lang, p_category, p_date, p_link, p_desc;
+      var p_name, p_hero, p_lang, p_category, p_date, p_link, p_github, p_desc;
 
       switch (portfolio) {
         case "cicada": 
@@ -214,6 +220,24 @@
           p_category  = 'Artificial Intelligence, Natural Language Processing';
           p_lang      = 'Python';
           p_date      = '2022';
+          p_github    = 'https://github.com/TeyWT28/Chatbot';
+          p_desc      = 'This project developed a chatbot that is able to have simple conversations with the user. '
+                        + '<img src="assets/img/portfolio/chatbot/basic.png">'
+                        + 'Besides casual chatting, this chatbot is ablt to answer various questions from users with the help of: '
+                        + '<ul><li><b>APIs</b> like SerpApi for Google Search and PyOWM for weather.</li>'
+                        + '<li><b>Question Answering System (QAS)</b> that has a Q/A bank consisting up to 2200 question and answer pairs.</li>'
+                        + '<li><b>Check Spelling feature</b> for more accurate input.</li>'
+                        + '<li><b>Natural Language Processing (NLP)</b> techniques like tokenization and lemmatization to pre-process input from user.</li></ul>'
+                        + '<br><b>Google Search</b><br>'
+                        + '<img src="assets/img/portfolio/chatbot/google_answer.png">'
+                        + '<img src="assets/img/portfolio/chatbot/google_organic.png">'
+                        + '<br><b>Weather</b><br>'
+                        + '<img src="assets/img/portfolio/chatbot/weather.png">'
+                        + '<br><b>Question Answering System (QAS)</b><br>'
+                        + '<img src="assets/img/portfolio/chatbot/qas.png">'
+                        + 'To make the human languages readable and understandable to the chatbot, the chatbot has to be trained with a huge amount of data. Besides the chatting feature, Potato is able to answer most of the questions from humans with the help of a web searcher and a Q/A bank that contains up to 2200 question and answer pairs. '
+                        + '<br><br><b>Check Spelling feature</b><br>'
+                        + '<img src="assets/img/portfolio/chatbot/autocorrect.png">'
           break;
         case "shiftplan": 
           p_name      = 'Shift Plan Enhancement'; 
@@ -251,8 +275,9 @@
           p_category  = 'Web Design';
           p_lang      = 'HTML, CSS';
           p_date      = '2020';
+          p_github    = 'https://github.com/TeyWT28/CodeScape';
+          document.getElementById("title").style.color= "#d4d4d4";
           break;
-          
       }
 
       // Set title
@@ -269,6 +294,9 @@
 
       // Set project description
       document.getElementById("description").innerHTML = p_desc;
+
+      // Set GitHub link
+      document.getElementById("github").innerHTML = '<strong>GitHub</strong>: <a href="' +p_github +'" target="_blank">' +p_github +'</a>';
 
     
   </script>

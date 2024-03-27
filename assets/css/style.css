@@ -743,11 +743,6 @@ section {
   margin-bottom: 30px;
 }
 
-.portfolio .portfolio-item {
-  margin-bottom: 30px;
-}
-
-
 .portfolio #portfolio-flters {
   padding: 0;
   margin: 0 auto 35px auto;
@@ -782,7 +777,7 @@ section {
 }
 
 .portfolio .portfolio-wrap {
-  transition: 0.3s;
+  /* transition: 0.3s; */
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -792,24 +787,25 @@ section {
   content: "";
   background: rgba(44, 73, 100, 0.6);
   position: absolute;
-  left: 30px;
-  right: 30px;
-  top: 30px;
-  bottom: 30px;
+  left: 0;
+  right: 0;
+  top: 65%;
+  bottom: 0;
   transition: all ease-in-out 0.3s;
   z-index: 2;
-  opacity: 0;
+  opacity: 1  ;
 }
 
 .portfolio .portfolio-wrap .portfolio-info {
-  opacity: 0;
+  opacity: 1;
   position: absolute;
-  top: 10%;
+  top: 70%;
   left: 10%;
   right: 10%;
   text-align: center;
   z-index: 3;
   transition: all ease-in-out 0.3s;
+  /* text-shadow: 2px 2px #111111b5; */
 }
 
 .portfolio .portfolio-wrap .portfolio-info h4 {
@@ -870,6 +866,7 @@ section {
   bottom: calc(30% - 50px);
 }
 
+/* for codescape */
 #img-hover{
   position:absolute;
   top: 0;
@@ -880,7 +877,7 @@ section {
   transition: all ease-in-out 0.5s;
 }
 
-.portfolio .portfolio-wrap:hover  #img-hover{
+.portfolio .portfolio-wrap:hover #img-hover{
   opacity: 1;
 }
 
@@ -940,9 +937,6 @@ section {
   margin-top: 10px;
 }
 
-.portfolio-details .portfolio-description {
-  padding-top: 30px;
-}
 
 .portfolio-details .portfolio-description h2 {
   font-size: 26px;
@@ -952,6 +946,15 @@ section {
 
 .portfolio-details .portfolio-description p {
   padding: 0;
+  text-align: justify;
+}
+
+.portfolio-details .portfolio-description img {
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 10px 10px 0;
 }
 
 /*--------------------------------------------------------------
@@ -1050,10 +1053,14 @@ section {
   background-color: #d43076;
 }
 
-.testimonials .swiper-button-next,
-.testimonials .swiper-button-prev {
+.testimonials .swiper-button-next {
   color: #d43076;
   margin-right: -12px;
+} 
+
+.testimonials .swiper-button-prev {
+  color: #d43076;
+  margin-left: -12px;
 } 
 
 @media (max-width: 767px) {
