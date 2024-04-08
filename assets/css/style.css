@@ -937,6 +937,13 @@ section {
   margin-top: 10px;
 }
 
+.portfolio-details .portfolio-info span {
+  font-family: monospace;
+  font-size: 12px;
+  font-weight: 550;
+  border-radius: 8px;
+  padding: 4px 10px;
+}
 
 .portfolio-details .portfolio-description h2 {
   font-size: 26px;
@@ -946,16 +953,46 @@ section {
 
 .portfolio-details .portfolio-description p {
   padding: 0;
-  text-align: justify;
+  text-align: justify;  
 }
 
 .portfolio-details .portfolio-description img {
-  width: 80%;
+  max-width: 80%;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
   padding: 10px 10px 10px 0;
 }
+
+.portfolio-details .portfolio-description h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e4e2e2;
+}
+
+.portfolio-details .portfolio-description h4 {
+  font-size: 18px;
+  font-weight: 650;
+  padding-bottom: 5px;
+  font-family: "Open Sans", sans-serif;
+  color: #4b7dab;
+}
+
+.codescape-container {
+  position: relative;
+}
+
+#img-hover:hover{
+  opacity: 1;
+}
+
+/* #description br {
+  content: "A" !important;
+    display: block !important;
+    margin-bottom: 1.5em !important;
+} */
+
+
 
 /*--------------------------------------------------------------
 # Testimonials

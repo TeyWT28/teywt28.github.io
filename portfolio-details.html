@@ -145,12 +145,12 @@
           <div class="col-lg-4">
             <div class="portfolio-info">
               <h3>Project information</h3>
-              <ul>
+              <ul id="project-info">
                 <li id="category"><strong>Category</strong>Artificial Intelligence</li>
                 <li id="language"><strong>Programming Language</strong>Python</li>
                 <li id="date"><strong>Project date</strong>: 01 March, 2020</li>
-                <li id="link"><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-                <li id="github"><strong>GitHub URL</strong>: <a href="#">www.example.com</a></li>
+                <!-- <li id="link"><strong>Project URL</strong>: <a href="#">www.example.com</a></li> -->
+                <!-- <li id="github"><strong>GitHub URL</strong>: <a href="#">www.example.com</a></li> -->
                </ul>
             </div>
             
@@ -199,84 +199,131 @@
     
     // function getParams() {
       var portfolio = document.URL.split('=')[1];
-      var p_name, p_hero, p_lang, p_category, p_date, p_link, p_github, p_desc;
+      var p_info, p_name, p_hero, p_lang, p_category, p_date, p_desc;
+      var p_link = ''
+      var p_github = '';
 
       switch (portfolio) {
         case "cicada": 
           p_name      = 'Cicada Species Recognition Based on Acoustic Signals'; 
-          p_category  = 'Artificial Intelligence, Image Recognition, Machine Learning';
+          p_category  = '<span style="background-color: #FEB7B3">AI/ML</span> <span style="background-color: #FCF1DD">Computer Vision</span>';
           p_lang      = 'Python, MATLAB';
           p_date      = 'Jun 2021 - Apr 2022';
+          p_link      = 'https://doi.org/10.3390/a15100358';
+          p_github    = '';
           p_desc      = 'This is a project to classify cicada species based on their acoustic signals.'
           break;
         case "errortable": 
           p_name      = 'Error Table Handling Project'; 
-          p_category  = 'Error Troubleshooting';
+          p_category  = '<span style="background-color: #97E5D7">Automation</span> <span style="background-color: #FFD4B8">Error Troubleshooting</span>';
           p_lang      = 'Oracle PL/SQL';
           p_date      = '2023';
           break;
         case "chatbot": 
           p_name      = 'Chatbot'; 
-          p_category  = 'Artificial Intelligence, Natural Language Processing';
+          p_category  = '<span style="background-color: #FEB7B3">AI/ML</span> <span style="background-color: #D2EBD8">NLP</span>';
           p_lang      = 'Python';
           p_date      = '2022';
           p_github    = 'https://github.com/TeyWT28/Chatbot';
           p_desc      = 'This project developed a chatbot that is able to have simple conversations with the user. '
-                        + '<img src="assets/img/portfolio/chatbot/basic.png">'
-                        + 'Besides casual chatting, this chatbot is ablt to answer various questions from users with the help of: '
+                        + '<br><br>Besides casual chatting, this chatbot is able to answer various questions from users with the help of: '
                         + '<ul><li><b>APIs</b> like SerpApi for Google Search and PyOWM for weather.</li>'
                         + '<li><b>Question Answering System (QAS)</b> that has a Q/A bank consisting up to 2200 question and answer pairs.</li>'
                         + '<li><b>Check Spelling feature</b> for more accurate input.</li>'
                         + '<li><b>Natural Language Processing (NLP)</b> techniques like tokenization and lemmatization to pre-process input from user.</li></ul>'
-                        + '<br><b>Google Search</b><br>'
+                        + '<img src="assets/img/portfolio/chatbot/basic.png">'
+                        
+                        + '<h3>Google Search</h3>'
                         + '<img src="assets/img/portfolio/chatbot/google_answer.png">'
                         + '<img src="assets/img/portfolio/chatbot/google_organic.png">'
-                        + '<br><b>Weather</b><br>'
+
+                        + '<h3>Weather</h3>'
                         + '<img src="assets/img/portfolio/chatbot/weather.png">'
-                        + '<br><b>Question Answering System (QAS)</b><br>'
+
+                        + '<h3>Question Answering System (QAS)</h3>'
                         + '<img src="assets/img/portfolio/chatbot/qas.png">'
                         + 'To make the human languages readable and understandable to the chatbot, the chatbot has to be trained with a huge amount of data. Besides the chatting feature, Potato is able to answer most of the questions from humans with the help of a web searcher and a Q/A bank that contains up to 2200 question and answer pairs. '
-                        + '<br><br><b>Check Spelling feature</b><br>'
-                        + '<img src="assets/img/portfolio/chatbot/autocorrect.png">'
+                        
+                        + '<h3>Check Spelling feature</h3>'
+                        + '<img src="assets/img/portfolio/chatbot/autocorrect.png">';
           break;
         case "shiftplan": 
           p_name      = 'Shift Plan Enhancement'; 
-          p_category  = 'Automation';
+          p_category  = '<span style="background-color: #97E5D7">Automation</span>';
           p_lang      = 'Excel VBA';
-          p_date      = '2021';
+          p_date      = 'Mar 2021 - Jun 2021';
+          p_desc      = 'This is an internship project that developed a shift plan management system using Microsoft Excel Macro with VBA programming language.'
+                        + ' Users can plot a one-year shift plan for all team members with just a few clicks.'
+                        + '<br><br>This system allows automation for the following processes:'
+                        + '<ul><li><b>Create new shift plan</b> template for a new year.</li>'
+                        + '<li><b>Add/remove staff</b> starting from selected month.</li>'
+                        + '<li><b>Add leave</b> for a member for selected range of dates.</li>'
+                        + '<li><b>Plot shifts</b> for members based on defined patterns (yearly / selected range of dates).</li>'
+                        + '<li><b>Plot public holidays</b> into shift plan.</li></ul>'
+                        + '<img src="assets/img/portfolio/shiftplan/home.png">'
+
+                        + '<h3>Key Feature: Plot Shifts</h3>'
+                        + 'There are two ways of plotting shift for two different group of users (MKZ and KUL).<br>'
+                        
+                        + '<br><h4>MKZ: Rotate shifts weekly</h4>'
+                        + '<b>Scenario: </b>In Week 1, the 1st member takes Shift 1, the 2nd takes Shift 2, and the 3rd takes Shift 3.'
+                        + '<br>In Week 2, the 1st member takes Shift 3 while the 2nd takes Shift 1, and the 3rd takes Shift 2.'
+                        + '<br><br>When users want to plot the shifts, a pop up will appear for them to customize the shift plan.'
+                        + '<br>Users can <b>change the shift pattern</b> and select whether they want to plot for a whole year or just a certain range.'
+                        + '<br><img src="assets/img/portfolio/shiftplan/mkz_plot.png">'
+                        + '<br><b>Result</b>'
+                        + '<img src="assets/img/portfolio/shiftplan/mkz.png">'
+                        
+                        + '<br><h4>KUL: Rotate shifts daily based on K2 </h4>'
+                        + '<b>Scenario: </b>A special shift, K2 will be plotted for a member first. Then, other shifts will be plotted for other members based on fixed pattern (K1-K5).'
+                        + '<br><br>Users will only need to plot K2 in the Excel, and the rest of the shifts will be plotted automatically based on the location of K2.'
+                        + '<img src="assets/img/portfolio/shiftplan/k2_before.png">'
+                        + '<br><b>Result</b>'
+                        + '<img src="assets/img/portfolio/shiftplan/k2_after.png">'
+                        ;
           break;
         case "facemask": 
+          document.getElementById("title").style.color= "#d4d4d4";
           p_name      = 'Medical Face Mask Selfie Facial Recognition'; 
-          p_category  = 'Artificial Intelligence, Computer Vision, Machine Learning';
+          p_category  = '<span style="background-color: #FEB7B3">AI/ML</span> <span style="background-color: #FCF1DD">Computer Vision</span>';
           p_lang      = 'Python';
           p_date      = '2021';
-          document.getElementById("title").style.color= "#d4d4d4";
+          p_desc      = 'This project developed a facial recognition system that is able to recognize one with medical face mask on.';
+                        + 'The dataset consists of selfies of 200 students.'
           break;
         case "hand": 
           p_name      = 'Hand Gesture Recognition';
-          p_category  = 'Artificial Intelligence, Computer Vision, Machine Learning';
+          p_category  = '<span style="background-color: #FEB7B3">AI/ML</span> <span style="background-color: #FCF1DD">Computer Vision</span>';
           p_lang      = 'Python';
           p_date      = '2021';
           break;
         case "octa": 
           p_name      = 'OCTA Learning Portal';
-          p_category  = 'Web Design';
+          p_category  = '<span style="background-color: #add8e6">Web Design</span>';
           p_lang      = 'PHP, HTML, CSS, JavaScript, Bootstrap';
           p_date      = '2021';
           break;
         case "store": 
           p_name      = 'Convenience Store Recognition System';
-          p_category  = 'Artificial Intelligence, Computer Vision, Machine Learning';
+          p_category  = '<span style="background-color: #FEB7B3">AI/ML</span> <span style="background-color: #FCF1DD">Computer Vision</span>';
           p_lang      = 'Python';
           p_date      = '2021';
+          p_desc      = 'This project designed a landscape scenario using HTML and CSS for a contest organized by IT Society Multimedia University Melaka. '
+                        + '<iframe src="assets/img/portfolio/codescape/city-landscape.html" width=100% height=100% />'
+                        + 'When hover over, the landscape will change to night view.';
+
           break;
         case "codescape": 
+          document.getElementById("title").style.color= "#d4d4d4";
           p_name      = 'CodeScape';
-          p_category  = 'Web Design';
+          p_category  = '<span style="background-color: #add8e6">Web Design</span>';
           p_lang      = 'HTML, CSS';
           p_date      = '2020';
           p_github    = 'https://github.com/TeyWT28/CodeScape';
-          document.getElementById("title").style.color= "#d4d4d4";
+          p_desc      = 'This project designed a landscape scenario using HTML and CSS for a contest organized by IT Society Multimedia University Melaka. '
+                        + '<br><div class="codescape-container"><img src="assets/img/portfolio/codescape/day.png">'
+                        + '<img id="img-hover" src="assets/img/portfolio/codescape/night.png"></div>'
+                        + 'When hover over, the landscape will change to night view.';
           break;
       }
 
@@ -295,8 +342,18 @@
       // Set project description
       document.getElementById("description").innerHTML = p_desc;
 
-      // Set GitHub link
-      document.getElementById("github").innerHTML = '<strong>GitHub</strong>: <a href="' +p_github +'" target="_blank">' +p_github +'</a>';
+      // Set article link if available
+      if (p_link !== '') {
+        p_info = document.getElementById("project-info").innerHTML
+        document.getElementById("project-info").innerHTML = p_info +'<li id="link"><strong>Article</strong>: <a href="' +p_link +'" target="_blank">' +p_link +'</a></li>';
+      }
+
+      // Set GitHub link if available
+      if (p_github !== '') {
+        p_info = document.getElementById("project-info").innerHTML
+        document.getElementById("project-info").innerHTML = p_info +'<li id="github"><strong>GitHub</strong>: <a href="' +p_github +'" target="_blank">' +p_github +'</a></li>';
+      }
+      
 
     
   </script>
