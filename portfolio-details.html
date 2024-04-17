@@ -103,7 +103,7 @@
             
           <div class="col-lg-8">
             <div class="portfolio-description">
-              <h2>Description</h2>
+              <h3>Introduction</h3>
               <p id="description">
                 Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
               </p>
@@ -211,13 +211,61 @@
           p_date      = 'Jun 2021 - Apr 2022';
           p_link      = 'https://doi.org/10.3390/a15100358';
           p_github    = '';
-          p_desc      = 'This is a project to classify cicada species based on their acoustic signals.'
+          p_desc      = 'This is a project to classify cicada species based on their acoustic signals. '
+                        + 'Three 17-year periodical cicada species were selected, namely <i>Magicicada Cassini</i>, <i>Magicicada Septendecim</i>, and <i>Magicicada Septendecula</i>.'
+                        + '<br><br>The flowchart below shows the processes of the cicada species recognition system.'
+                        + '<img src="assets/img/portfolio/cicada/flowchart.png">'
+                        
+                        + '<h3>Pre-processing</h3>'
+                        + 'The audio dataset was pre-processed by denoising. '
+                        + 'Both high pass and low pass filters were applied to remove white noises.'
+                        + '<img src="assets/img/portfolio/cicada/preprocess.png">'
+
+                        + '<h3>Audio Segmentation & Spectrogram</h3>'
+                        + 'Audio signals were segmented using Härmä Syllable Segmentation (Härmä) algorithm or improved version of it before visualized as spectrogram images. '
+                        + '<br><br><h4>Härmä + Binary Thresholding</h4>'
+                        + 'Härmä was used to find the syllables in the audio signals and remove other signals. '
+                        + 'However, merely using Härmä is unable to remove low amplitude signals that may cause confusion during training and classification process.'
+                        + '<br><br>Thus, binary thresholding is applied to remove low amplitude signals, but result shows that some very low amplitude signals may still present'
+                        + ' due to its color higher than the threshold value.'
+                        + '<img src="assets/img/portfolio/cicada/harma.png">'
+
+                        + '<br><h4>Improved Härmä</h4>'
+                        + 'To achieve a better output, the Härmä algorithm is improved such that when a syllable is found, '
+                        + 'it will remove other signals in that syllable that are lower than the threshold value. '
+                        + 'Thus, successfully removing all the low amplitude signals that are not important.'
+                        + '<img src="assets/img/portfolio/cicada/improved_harma.png">'
+
+                        + '<h3>Training & Classification</h3>'
+                        + 'A convolutional neural network (CNN) model was developed for training and classification.'
+                        + 'The input to the model were spectrogram images generated using different combination of methods. '
+                        + '<br><br>For each method, the spectrograms were created from the full-length audio file (Full-Length Dataset) and the individual syllables found from the Härmä algorithm (Cut Dataset).'
+                        + '<img src="assets/img/portfolio/cicada/dataset.png">'
+
+                        + '<h3>Results</h3>'
+                        + 'The following table shows the classification results.'
+                        + '<img src="assets/img/portfolio/cicada/result.png">';
+                        
           break;
         case "errortable": 
           p_name      = 'Error Table Handling Project'; 
           p_category  = '<span style="background-color: #97E5D7">Automation</span> <span style="background-color: #FFD4B8">Error Troubleshooting</span>';
           p_lang      = 'Oracle PL/SQL';
           p_date      = '2023';
+          p_desc      = 'This is a project developed an error handling procedure using PL/SQL to automate the troubleshooting process for Error Table. '
+                        + '<h3>Background</h3>'
+                        + 'During data loading, problematic entries with missing values for important columns will caused the databse loading job to fail.'
+                        + 'A procedure was developed to remove such entries from the database job into the Error Table to allow jobs to run successfully without the entries. '
+                        + '<br>However, those entries will remain in the Error Table until manual intervention, which leads to missing data in the database.'
+                        
+                        + '<h3>Procedure Flow</h3>'
+                        + '<img src="assets/img/portfolio/errortable/flowchart.png">'
+                        + '<ol><li>To avoid loading duplicate data into the database, the procedure first checks for duplicates in the Error Table, and remove them, if any.</li>' 
+                        + '<li>Then, it checks if the data in the Error Table is already loaded into the database. If yes, remove the one in Error Table.</li>'
+                        + '<li>Next, it finds the important columns needed for that problematic entry and checks whether the columns are now filled.</li>'
+                        + '<li>If all columns are filled, it will reload the entries so that it will enter the database.</li>'
+                        + '<li>If one of the columns is not filled, it will save the entry in a temporary table.</li>'
+                        + '<li>Finally, it will compile all the entries that still have missing values and send an email to the support team.</li></ol>'
           break;
         case "chatbot": 
           p_name      = 'Chatbot'; 
@@ -233,18 +281,19 @@
                         + '<li><b>Natural Language Processing (NLP)</b> techniques like tokenization and lemmatization to pre-process input from user.</li></ul>'
                         + '<img src="assets/img/portfolio/chatbot/basic.png">'
                         
-                        + '<h3>Google Search</h3>'
+                        + '<h3>Features</h3>'
+                        + '<h4>Google Search</h4>'
                         + '<img src="assets/img/portfolio/chatbot/google_answer.png">'
                         + '<img src="assets/img/portfolio/chatbot/google_organic.png">'
 
-                        + '<h3>Weather</h3>'
+                        + '<br><h4>Weather</h4>'
                         + '<img src="assets/img/portfolio/chatbot/weather.png">'
 
-                        + '<h3>Question Answering System (QAS)</h3>'
+                        + '<br><h4>Question Answering System (QAS)</h4>'
                         + '<img src="assets/img/portfolio/chatbot/qas.png">'
                         + 'To make the human languages readable and understandable to the chatbot, the chatbot has to be trained with a huge amount of data. Besides the chatting feature, Potato is able to answer most of the questions from humans with the help of a web searcher and a Q/A bank that contains up to 2200 question and answer pairs. '
                         
-                        + '<h3>Check Spelling feature</h3>'
+                        + '<br><h4>Check Spelling feature</h4>'
                         + '<img src="assets/img/portfolio/chatbot/autocorrect.png">';
           break;
         case "shiftplan": 
@@ -269,7 +318,6 @@
                         + '<b>Scenario: </b>In Week 1, the 1st member takes Shift 1, the 2nd takes Shift 2, and the 3rd takes Shift 3.'
                         + '<br>In Week 2, the 1st member takes Shift 3 while the 2nd takes Shift 1, and the 3rd takes Shift 2.'
                         + '<br><br>When users want to plot the shifts, a pop up will appear for them to customize the shift plan.'
-                        + '<br>Users can <b>change the shift pattern</b> and select whether they want to plot for a whole year or just a certain range.'
                         + '<br><img src="assets/img/portfolio/shiftplan/mkz_plot.png">'
                         + '<br><b>Result</b>'
                         + '<img src="assets/img/portfolio/shiftplan/mkz.png">'
