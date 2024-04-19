@@ -217,10 +217,10 @@
                         + '<img src="assets/img/portfolio/cicada/flowchart.png">'
                         
                         + '<h3>Dataset</h3>'
-                        + 'The dataset consists of a total of 43 sound recordings of the three different cicada species'
+                        + 'The dataset consists of a total of 43 sound recordings of the three different cicada species. '
                         + 'The species <i>M. Cassini</i> and <i>M. Septendecula</i> each has 14 audio files, while <i>M. Septendecim</i> has 15 audio files. '
                         + 'All sound recordings are recorded in mono at a sampling rate of 44.1 kHz. '
-                        + '<br><br>The figure below shows samples of the waveform of sounds of each species.'
+                        + '<br><br>Figure below shows samples of the waveform of sounds of each species.'
                         + '<img src="assets/img/portfolio/cicada/waveform.png">'
 
 
@@ -244,12 +244,24 @@
                         + 'Thus, successfully removing all the low amplitude signals that are not important.'
                         + '<img src="assets/img/portfolio/cicada/improved_harma.png">'
 
-                        + '<h3>Training & Classification</h3>'
-                        + 'A convolutional neural network (CNN) model was developed for training and classification.'
-                        + 'The input to the model were spectrogram images generated using different combination of methods. '
-                        + '<br><br>For each method, the spectrograms were created from the full-length audio file (Full-Length Dataset) and the individual syllables found from the Härmä algorithm (Cut Dataset).'
+                        + '<br><h4>Spectrogram</h4>'
+                        + 'After segmentation, the audio signals were visualized as spectrogram images to form Full-Length Dataset and Cut Dataset. '
+                        + '<br><br><b>Full-Length Dataset</b>'
+                        + '<br>Consists of spectrograms created from full-length audio files with dimension 400x100 pixels.'
+
+                        + '<br><br><b>Cut Dataset</b>'
+                        + '<br>Consists of spectrogram images generated from individual syllables found using Härmä algorithm or the improved version of it. '
+                        + '<ul><li>Härmä algorithm Cut Dataset contains a total of 684 images in dimension 100x100 pixels with '
+                        + '300 samples for species 1 , 184 samples for species 2, and 200 samples for species 3. </li>'
+                        + '<li>Improved Härmä algorithm Cut Dataset consists of 215 images in dimension 100x100 pixels '
+                        + 'with 147 samples for species 1, 25 samples for species 2, and 43 samples for species 3. </li></ul> '
                         + '<img src="assets/img/portfolio/cicada/dataset.png">'
 
+                        + '<h3>Training & Classification</h3>'
+                        + 'The dataset was separated into training and testing set with a ratio of 8:2. '
+                        + 'A convolutional neural network (CNN) model with the following architecture was developed for training and classification.'
+                        + '<img src="assets/img/portfolio/cicada/cnn.png">'
+                       
                         + '<h3>Results</h3>'
                         + 'The following table shows the final results where the classification accuracies ranged from 77.78% to 100%. '
                         + 'The improved version of Härmä algorithm achieved the best results, and overall, the model performed better with Cut Dataset compared to Full-Length Dataset.'
@@ -347,7 +359,7 @@
           p_desc      = 'This project developed a medical face mask selfie recognition system that is able to recognize an individual with medical face mask on. '
                         + 'It was developed during COVID-19 pandemic as the conventional facial recognition systems may not be able to function optimally '
                         + 'when most of the facial characteristics are covered by the face mask. '
-                        + '<br><br>The flowchart below shows the processes of the medical face mask selfie recognition system. '
+                        + '<br><br>Flowchart below shows the processes of the medical face mask selfie recognition system. '
                         + '<img src="assets/img/portfolio/facemask/flowchart.png">'
 
                         + '<h3>Dataset</h3>'
@@ -370,13 +382,72 @@
                         + '<h3>Results</h3>'
                         + 'The best result obtained from the model is by training with 20 epochs and 0.25 dropout rate. '
                         + '<br>The model was also evaluated with precision and recall metrics costs of false positive (predicting a positive when it is negative) and false negative (predicting a negative when it is positive) are high.'
-                        + '<img src="assets/img/portfolio/facemask/result.png">'
+                        + '<img src="assets/img/portfolio/facemask/result.png">';
           break;            
         case "hand": 
           p_name      = 'Hand Gesture Recognition';
           p_category  = '<span style="background-color: #FEB7B3">AI/ML</span> <span style="background-color: #FCF1DD">Computer Vision</span>';
           p_lang      = 'Python';
           p_date      = '2021';
+          p_desc      = 'This project developed a hand gesture recognition system that is important in fields such as virtual reality and sign language interpretation. '
+                        + '<h3>Dataset</h3>'
+                        + 'Three different hand gesture datasets were retrieved from Kaggle and used in this project. '
+                        + '<br><b>Dataset 1</b>'
+                        + '<ul><li>6600 pre-processed hand gesture images. </li>'
+                        + '<li>6 classes: fist, one, palm, swing, three and two. </li>'
+                        + '<li>Each class contains 1100 binary images with dimensions 100x89 pixels. </li></ul>'
+
+                        + '<b>Dataset 2</b>'
+                        + '<ul><li>14000 pre-processed hand gesture images. </li>'
+                        + '<li>7 classes: fist, five, rad, peace, thumbs, straight and okay. </li>'
+                        + '<li>Each class contains 2000 binary images with dimensions 256x256 pixels. </li></ul>'
+
+                        + '<b>Dataset 3</b>'
+                        + '<ul><li>3019 raw hand gesture images. </li>'
+                        + '<li>10 classes: 1, 2, 3, 4, 5, A, E, I, O and U. </li>'
+                        + '<li>Each class contains different number of images, ranging from 287 to 316 images. </li></ul>'
+
+                        + 'Figure below shows sample images of each dataset.' 
+                        + '<img src="assets/img/portfolio/hand/dataset.png">'
+
+                        + '<h3>Pre-processing</h3>'
+                        + 'Dataset 1 and Dataset 2 were pre-processed and thus, only Dataset 3 is involved in this step. '
+                        + '<br>MediaPipe Hands, a hand and finger tracking technique, is used to detect the hand landmarks. '
+                        + 'The Hand Landmark Model is used to perform precise keypoint localization of 21 3D hand-knuckle coordinations inside the detected hand regions. '
+                        + '<br><br>Figure below shows the results of applying Hand Landmark Model on Dataset 3.' 
+                        + '<img src="assets/img/portfolio/hand/preprocess.png">'
+
+                        + 'To standardize the number of images for each class, 238 images were selected for each class. '
+                        + 'Then, the images were resized to 129x230 pixels.'
+                        
+                        + '<h3>Training & Classification</h3>'
+                        + 'Each dataset was separated into training, testing, and validation set with a ratio of 6:2:2. '
+                        + 'Three different Convolutional Neural Network (CNN) models were built for the three datasets since their classes, dataset size and image size differ. '
+                        + '<br><br><h4>CNN model for Dataset 1</h4>'
+                        + 'The model was trained with 50 epochs and batch size of 128 with rmsprop as optimizer. '
+                        + 'These settings achieved a satisfactory result and thus, no further adjustment was made. '
+                        + '<img src="assets/img/portfolio/hand/cnn1.png">'
+
+                        + '<br><br><h4>CNN model for Dataset 2</h4>'
+                        + 'On the basis of the 1st model, a convolutional layer, a hidden layer and a dropout layer were added.'
+                        + 'Then, the model was trained with the same settings. '
+                        + '<img src="assets/img/portfolio/hand/cnn2.png">'
+
+                        + '<br><br><h4>CNN model for Dataset 3</h4>'
+                        + 'Similarly, a hidden layer and a dropout layer was added to the initial architecture '
+                        + 'and increased the value of all dropout layers from 0.25 to 0.5. '
+                        + 'Then, the model was trained with 80 epochs and batch size of 128 with adam optimizer.'
+                        + '<img src="assets/img/portfolio/hand/cnn3.png">'
+                        + '<h3>Results</h3>'
+                        + 'Classification results showed that the model performed well for the first two pre-processed dataset. '
+                        + '<img src="assets/img/portfolio/hand/result.png">'
+                        + 'Looking at the confusion matrix of prediction result for Dataset 3, it is shown that samples of Class 3 were often misclassified as Class 2 and 4. '
+                        + 'Moreover, samples of Class 1 and 3 were frequently misinterpreted as Class 2. '
+                        + '<img src="assets/img/portfolio/hand/matrix.png">'
+                        + 'This may be due to the similarity betwen the gestures after pre-processing and the angle of capture, as shown in figure below '
+                        + 'where a sample of Class 3 was misclassified as Class 4.'
+                        + '<img src="assets/img/portfolio/hand/misclassify.png">'
+                        ;
           break;
         case "octa": 
           p_name      = 'OCTA Learning Portal';
