@@ -957,7 +957,7 @@ section {
 }
 
 .portfolio-details .portfolio-description img {
-  max-width: 80%;
+  max-width: 85%;
   display: block;
   padding: 10px 10px 10px 0;
 }
@@ -985,13 +985,6 @@ section {
 #img-hover:hover{
   opacity: 1;
 }
-
-/* #description br {
-  content: "A" !important;
-    display: block !important;
-    margin-bottom: 1.5em !important;
-} */
-
 
 
 /*--------------------------------------------------------------

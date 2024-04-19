@@ -216,6 +216,14 @@
                         + '<br><br>The flowchart below shows the processes of the cicada species recognition system.'
                         + '<img src="assets/img/portfolio/cicada/flowchart.png">'
                         
+                        + '<h3>Dataset</h3>'
+                        + 'The dataset consists of a total of 43 sound recordings of the three different cicada species'
+                        + 'The species <i>M. Cassini</i> and <i>M. Septendecula</i> each has 14 audio files, while <i>M. Septendecim</i> has 15 audio files. '
+                        + 'All sound recordings are recorded in mono at a sampling rate of 44.1 kHz. '
+                        + '<br><br>The figure below shows samples of the waveform of sounds of each species.'
+                        + '<img src="assets/img/portfolio/cicada/waveform.png">'
+
+
                         + '<h3>Pre-processing</h3>'
                         + 'The audio dataset was pre-processed by denoising. '
                         + 'Both high pass and low pass filters were applied to remove white noises.'
@@ -243,7 +251,8 @@
                         + '<img src="assets/img/portfolio/cicada/dataset.png">'
 
                         + '<h3>Results</h3>'
-                        + 'The following table shows the classification results.'
+                        + 'The following table shows the final results where the classification accuracies ranged from 77.78% to 100%. '
+                        + 'The improved version of Härmä algorithm achieved the best results, and overall, the model performed better with Cut Dataset compared to Full-Length Dataset.'
                         + '<img src="assets/img/portfolio/cicada/result.png">';
                         
           break;
@@ -301,8 +310,8 @@
           p_category  = '<span style="background-color: #97E5D7">Automation</span>';
           p_lang      = 'Excel VBA';
           p_date      = 'Mar 2021 - Jun 2021';
-          p_desc      = 'This is an internship project that developed a shift plan management system using Microsoft Excel Macro with VBA programming language.'
-                        + ' Users can plot a one-year shift plan for all team members with just a few clicks.'
+          p_desc      = 'This is an internship project that developed a shift plan management system using Microsoft Excel Macro with VBA programming language. '
+                        + 'Users can plot a one-year shift plan for all team members with just a few clicks. '
                         + '<br><br>This system allows automation for the following processes:'
                         + '<ul><li><b>Create new shift plan</b> template for a new year.</li>'
                         + '<li><b>Add/remove staff</b> starting from selected month.</li>'
@@ -315,9 +324,9 @@
                         + 'There are two ways of plotting shift for two different group of users (MKZ and KUL).<br>'
                         
                         + '<br><h4>MKZ: Rotate shifts weekly</h4>'
-                        + '<b>Scenario: </b>In Week 1, the 1st member takes Shift 1, the 2nd takes Shift 2, and the 3rd takes Shift 3.'
-                        + '<br>In Week 2, the 1st member takes Shift 3 while the 2nd takes Shift 1, and the 3rd takes Shift 2.'
-                        + '<br><br>When users want to plot the shifts, a pop up will appear for them to customize the shift plan.'
+                        + '<b>Scenario: </b>In Week 1, the 1st member takes Shift 1, the 2nd takes Shift 2, and the 3rd takes Shift 3. '
+                        + '<br>In Week 2, the 1st member takes Shift 3 while the 2nd takes Shift 1, and the 3rd takes Shift 2. '
+                        + '<br><br>When users want to plot the shifts, a pop up will appear for them to customize the shift plan. '
                         + '<br><img src="assets/img/portfolio/shiftplan/mkz_plot.png">'
                         + '<br><b>Result</b>'
                         + '<img src="assets/img/portfolio/shiftplan/mkz.png">'
@@ -327,8 +336,7 @@
                         + '<br><br>Users will only need to plot K2 in the Excel, and the rest of the shifts will be plotted automatically based on the location of K2.'
                         + '<img src="assets/img/portfolio/shiftplan/k2_before.png">'
                         + '<br><b>Result</b>'
-                        + '<img src="assets/img/portfolio/shiftplan/k2_after.png">'
-                        ;
+                        + '<img src="assets/img/portfolio/shiftplan/k2_after.png">';
           break;
         case "facemask": 
           document.getElementById("title").style.color= "#d4d4d4";
@@ -336,9 +344,34 @@
           p_category  = '<span style="background-color: #FEB7B3">AI/ML</span> <span style="background-color: #FCF1DD">Computer Vision</span>';
           p_lang      = 'Python';
           p_date      = '2021';
-          p_desc      = 'This project developed a facial recognition system that is able to recognize one with medical face mask on.';
-                        + 'The dataset consists of selfies of 200 students.'
-          break;
+          p_desc      = 'This project developed a medical face mask selfie recognition system that is able to recognize an individual with medical face mask on. '
+                        + 'It was developed during COVID-19 pandemic as the conventional facial recognition systems may not be able to function optimally '
+                        + 'when most of the facial characteristics are covered by the face mask. '
+                        + '<br><br>The flowchart below shows the processes of the medical face mask selfie recognition system. '
+                        + '<img src="assets/img/portfolio/facemask/flowchart.png">'
+
+                        + '<h3>Dataset</h3>'
+                        + 'The dataset contains 161 categories (students). Each category has 500 selfie images with medical fask mask. The images are taken at different places with clear background and dimension of 192x256 pixels. '
+                        + 'In total, the dataset contains 80,500 images. '
+                        + '<img src="assets/img/portfolio/facemask/dataset.png">'
+                        + '<i>Note: images are blurred out here to protect identity of individuals.</i>'
+
+                        + '<h3>Pre-processing</h3>'
+                        + 'The dataset was pre-processed by gray scaling and cropping out the region of interest (ROI). '
+                        + 'Then, all images are resized to 150x150 pixels and applied data normalization to remove distortions caused by lights and shadows. '
+                        + '<img src="assets/img/portfolio/facemask/preprocess.png">'
+
+                        + '<h3>Training & Classification</h3>'
+                        + 'Each category of dataset was separated into training, testing, and validation set with a ratio of 6:2:2. '
+                        + 'A Convolutional Neural Network (CNN) was built with the following architecture and trained with '
+                        + 'different number of epochs and modifying the dropout rate of dropout layers to regularize the neural network. '
+                        + '<img src="assets/img/portfolio/facemask/cnn.png">'
+
+                        + '<h3>Results</h3>'
+                        + 'The best result obtained from the model is by training with 20 epochs and 0.25 dropout rate. '
+                        + '<br>The model was also evaluated with precision and recall metrics costs of false positive (predicting a positive when it is negative) and false negative (predicting a negative when it is positive) are high.'
+                        + '<img src="assets/img/portfolio/facemask/result.png">'
+          break;            
         case "hand": 
           p_name      = 'Hand Gesture Recognition';
           p_category  = '<span style="background-color: #FEB7B3">AI/ML</span> <span style="background-color: #FCF1DD">Computer Vision</span>';
