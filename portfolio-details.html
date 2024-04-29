@@ -102,7 +102,7 @@
         <div class="row gy-4">
             
           <div class="col-lg-8">
-            <div class="portfolio-description">
+            <div id="portfolio-desc" class="portfolio-description">
               <h3>Introduction</h3>
               <p id="description">
                 Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
@@ -454,6 +454,7 @@
           p_category  = '<span style="background-color: #add8e6">Web Design</span>';
           p_lang      = 'PHP, HTML, CSS, JavaScript, Bootstrap';
           p_date      = '2021';
+          p_desc      = '';
           break;
         case "store": 
           p_name      = 'Convenience Store Recognition System';
@@ -461,7 +462,6 @@
           p_lang      = 'Python';
           p_date      = '2021';
           p_desc      = '';
-
           break;
         case "codescape": 
           document.getElementById("title").style.color= "#d4d4d4";
@@ -471,6 +471,7 @@
           p_date      = '2020';
           p_github    = 'https://github.com/TeyWT28/CodeScape';
           p_desc      = 'This project designed a landscape scenario using HTML and CSS for a contest organized by IT Society Multimedia University Melaka. '
+                        + 'It was awarded 1st place in the competition.'
                         + '<br><div class="codescape-container"><img src="assets/img/portfolio/codescape/day.png">'
                         + '<img id="img-hover" src="assets/img/portfolio/codescape/night.png"></div>'
                         + 'When hover over, the landscape will change to night view.';
@@ -490,7 +491,11 @@
       document.getElementById("date").innerHTML = '<strong>Project Date</strong>: ' +p_date;
 
       // Set project description
-      document.getElementById("description").innerHTML = p_desc;
+      if (p_desc !== '') {
+        document.getElementById("description").innerHTML = p_desc;
+      } else {
+        document.getElementById("portfolio-desc").innerHTML = '<img src="assets/img/wip6.png" style="display: block; margin-left: auto; margin-right: auto;" height="300px">';
+      }
 
       // Set article link if available
       if (p_link !== '') {

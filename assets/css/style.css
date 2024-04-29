@@ -515,7 +515,7 @@ section {
   padding: 15px 0 0 0;
   margin: 0 0 0 50px;
   font-family: "Playfair Display", serif;
-  font-size: 14px;
+  font-size: 16px;
   color: #437099;
 }
 
@@ -559,17 +559,17 @@ section {
 # Skills
 --------------------------------------------------------------*/
 .skills .progress {
-  height: 50px;
+  height: 70px;
   display: block;
   background: none;
 }
 
 .skills .progress .skill {
   padding: 10px 0;
-  margin: 0 0 6px 0;
   text-transform: uppercase;
   display: block;
   font-weight: 600;
+  font-size: 15px;
   font-family: "Poppins", sans-serif;
   color: #2c4964;
 }
@@ -581,12 +581,14 @@ section {
 
 .skills .progress-bar-wrap {
   background: #fbeaf1;
+  border-radius: 25px;
 }
 
 .skills .progress-bar {
   width: 1px;
-  height: 10px;
+  height: 8px;
   transition: 0.9s;
+  border-radius: 25px;
   background-color: #dd5a92;
 }
 
